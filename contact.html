@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT - portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="index.html#top">
+          <img src="imgs/top vector.svg" alt="TOP">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="works.html">
+          <img src="imgs/work vector.svg" alt="works">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="index.html#gallery">
+          <img src="imgs/GAL vec.svg" alt="GALL">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="contact.html">
+          <img src="imgs/CON vec.svg" alt="CON">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="index.html#links">
+          <img src="imgs/LINK vec.svg" alt="LINKs">
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <!-- メインエリア -->
+  <main class="site-main">
+    <section class="contact-page-section">
+      <div class="section-title text-center">
+        <img src="imgs/CON vec.svg" alt="CONTACT">
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- ★ 送信先IDを適用した場所 -->
+        <form action="https://ssgform.com/s/d2p5LHGs07PH" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">NAME</label>
+            <input type="text" id="name" name="お名前" placeholder="お名前を入力してください" required>
+          </div>
+          <div class="form-group">
+            <label for="email">MAIL</label>
+            <input type="email" id="email" name="メールアドレス" placeholder="example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">MESSAGE</label>
+            <textarea id="message" name="お問い合わせ内容" rows="6" placeholder="お問い合わせ内容を入力してください" required></textarea>
+          </div>
+          <button type="submit" class="contact-btn antonio-bold">SEND</button>
+        </form>
+        <div class="contact-subtext">お問い合わせはこちらから</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    @2026tctk.
+  </footer>
+</body>
+</html>

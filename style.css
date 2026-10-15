@@ -1,0 +1,520 @@
+/* 全体・カラー設定 */
+
+:root {
+    --bg-color: #55448c;       /* 背景のパープル */
+    --shadow-color: #8073bd;   /* テキストや要素のドロップシャドウ色 */
+    --text-white: #ffffff;
+    --card-bg: #d9d9d9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.antonio-bold {
+    font-family: "Antonio", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* site-header (ヘッダー) */
+.site-header {
+    width: 100%;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(85, 68, 140, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.site-header .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.site-header .nav-item img {
+    height: 22px;
+    display: block;
+}
+
+/* site-main (メインコンテンツ) */
+.site-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px 80px;
+}
+
+/* hero-section */
+.hero-section {
+    padding: 40px 0 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo-wrapper {
+    padding: 10px 0 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* セクション共通スタイル */
+.section-title {
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.section-title img {
+    height: 38px;
+    display: block;
+}
+
+.profile-section,
+.works-section,
+.gallery-section,
+.links-section,
+.contact-section {
+    margin-bottom: 120px;
+}
+
+/* --- WORKS セクション --- */
+.works-card {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.media-placeholder {
+    width: 100%;
+    max-width: 720px;
+    aspect-ratio: 16 / 9;
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.works-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 切り取らずに画像全体を表示 */
+    display: block;
+}
+
+.works-info {
+    width: 100%;
+    max-width: 720px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+.works-info .antonio-bold {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.works-info p {
+    margin-bottom: 6px;
+}
+
+/* --- GALLERY セクション --- *//* --- GALLERY セクション --- */
+.gallery-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* 行（黒枠カード + テキストの横並び領域） */
+.gallery-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* カード枠本体 */
+.gallery-item {
+    width: 48%;
+    aspect-ratio: 4 / 3;
+    background-color: #000000; /* 黒色のカード背景 */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 全体表示 */
+    display: block;
+}
+
+/* カードの外側（横）に配置するテキスト情報 */
+.gallery-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.gallery-artist {
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+}
+
+.gallery-title {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+/* 2個目（偶数）は配置を反転させて左側にテキスト、右側にカードを配置 */
+.gallery-row:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.gallery-more {
+    text-align: right;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    margin-top: 40px;
+}
+
+/* レスポンシブ対応（スマホ表示時に縦並びへ自動調整） */
+@media (max-width: 768px) {
+    .gallery-row,
+    .gallery-row:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 16px;
+    }
+    .gallery-item {
+        width: 100%;
+    }
+}
+
+/* links-section */
+.links-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.link-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+}
+
+.link-card:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* contact-section */
+/* contact-section (全体を中央揃え) */
+/* contact-section (全体を中央揃え) */
+/* contact-section (全体を中央揃え) */
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* ボタンと下部テキストを中央揃え */
+    text-align: center;
+    padding: 40px 0;
+}
+
+.contact-btn {
+    display: inline-flex;       /* Flexboxで中のテキストを完全中央配置 */
+    justify-content: center;   /* 横方向の中央揃え */
+    align-items: center;       /* 縦方向の中央揃え */
+    border: 2px solid #ffffff; /* 通常時の枠線色（白） */
+    width: 260px;              /* ボタン幅 */
+    height: 56px;              /* ボタン高さ */
+    font-size: 24px;           /* 文字サイズ */
+    letter-spacing: 0.08em;    /* 文字間隔 */
+    margin-bottom: 16px;
+    background-color: transparent; /* 背景色は透明（塗りつぶしなし） */
+    color: #ffffff;            /* 通常時の文字色（白） */
+    transition: border-color 0.2s, color 0.2s; /* なめらかに色を変化 */
+}
+
+.contact-subtext {
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: #ffffff;            /* 通常時のサブテキスト色 */
+    transition: color 0.2s;    /* なめらかに色を変化 */
+}
+
+/* ★ CONTACTボタンボックスにマウスが乗った時だけ発動 */
+.contact-btn:hover {
+    border-color: #FF6EB9;     /* ボタン枠線をピンクに */
+    color: #FF6EB9;            /* ボタン文字をピンクに */
+    background-color: transparent;
+}
+
+/* ★ ボタンにホバーした時、直後にあるサブテキストの色も同時にピンクに変更 */
+.contact-btn:hover + .contact-subtext {
+    color: #FF6EB9;
+}
+
+
+/* site-footer */
+.site-footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+
+
+/* --- WORKSページ専用スタイル --- */
+.section-twowork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0 80px;
+}
+
+.section-twowork .works-title {
+    font-size: 48px;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.section-twowork .works-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* カードとカードの間の縦余白 */
+    align-items: center;
+}
+
+
+/* WORKS カード枠 */
+.media-placeholder {
+    width: 100%;
+    max-width: 720px;
+    aspect-ratio: 16 / 9;
+    background-color: #000000; /* 黒色に変更 */
+    border-radius: 4px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* GALLERY カード枠 */
+.gallery-item {
+    width: 48%;
+    aspect-ratio: 4 / 3;
+    background-color: #000000; /* 黒色に変更 */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    overflow: hidden;
+    margin-left: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.works-link {
+    color: #ffffff;
+    font-weight: bold;      /* ← ここを追加（文字を太くします） */
+    text-decoration: underline;
+    word-break: break-all;  /* URLが長くなった場合に自動で改行させる指定 */
+    transition: color 0.2s;
+}
+
+.works-link:hover {
+    color: #FF6EB9;        /* ホバー時にピンク色に変化 */
+}
+
+/* --- お問い合わせページ (contact.html) 専用スタイル --- */
+.contact-page-section {
+    padding: 40px 0 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* セクション全体を中央寄せ */
+}
+
+/* セクションタイトル（見出し画像）を完全中央配置 */
+.section-title.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.section-title.text-center img {
+    margin: 0 auto;
+}
+
+/* フォーム全体のコンテナ */
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;  /* テキスト・要素を中央揃え */
+    width: 100%;
+    max-width: 540px;    /* 画面中央で見やすい適切な幅 */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 24px;
+}
+
+/* 入力グループ（NAME, MAIL, MESSAGE の項目） */
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ラベルと入力欄を中央揃え */
+    gap: 10px;
+}
+
+.form-group label {
+    font-family: "Antonio", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    text-align: center;  /* ラベル文字を中央揃え */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: inherit;
+    text-align: center;  /* 入力文字・プレースホルダーも中央に配置 */
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+/* フォーカス時のアクセント（ピンク色） */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #FF6EB9;
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* 送信ボタン（SEND） */
+.contact-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffffff;
+    width: 260px;        /* ボタン自体の幅を固定して見やすく配置 */
+    height: 56px;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.contact-btn:hover {
+    border-color: #FF6EB9;
+    color: #FF6EB9;
+    background-color: transparent;
+}
+
+/* ボタンホバー時にサブテキストの色も連動してピンクへ変更 */
+.contact-form:has(.contact-btn:hover) + .contact-subtext {
+    color: #FF6EB9;
+}
+
+.contact-subtext {
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-align: center;
+    transition: color 0.2s;
+}
+
+/* レスポンシブ対応（スマホ表示時に縦並びへ自動調整） */
+@media (max-width: 768px) {
+    .gallery-row,
+    .gallery-row:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 16px;
+    }
+    .gallery-item {
+        width: 100%;
+    }
+}
